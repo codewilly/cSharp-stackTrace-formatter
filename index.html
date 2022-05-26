@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.cdnfonts.com/css/cascadia-mono" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <title>StackTrace Formatter</title>
+
+    <script>
+    $(document).ready(function() {
+        $('#stackTraceInput').bind('input propertychange', function() {
+            formatStackTrace(this.value, '#renderedStackTrace');
+        });
+    });
+    </script>
+</head>
+    <body>   
+        <div class="page-container">      
+            <div class="content-wrap">
+                <h2>C# StackTrace Formatter</h2>
+
+                <p>Insert your C# StackTrace:</p>
+                <textarea name="stackTraceInput" id="stackTraceInput" rows="5"></textarea>
+        
+                <p>Formatted StackTrace:</p>
+                <div id="renderedStackTrace" class="stackTrace"></div>
+            </div>  
+
+
+        <footer>
+            <hr>
+            <center>
+                <p>Powered by Michael Willy. <a href="https://github.com/codewilly?tab=repositories" target="_blank">github.com/codewilly</a></p>
+            </center>    
+            <br>        
+        </footer>
+    </div>
+    </body>
+</html>
